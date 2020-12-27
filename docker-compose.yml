@@ -1,0 +1,41 @@
+version : '3'
+services:
+  my-mysql-compose:
+    restart: always
+    container_name: my-mysql-compose
+    image: mysql
+    networks:
+      - spring-boot-mysql-network
+    environment:
+      MYSQL_DATABASE: test
+      MYSQL_USER: employee
+      MYSQL_PASSWORD: employee
+      MYSQL_ROOT_PASSWORD: password
+    ports:
+      - "3306:3306"
+    volumes:
+#      - ./src/main/resources:/data/application/
+      - ./db-dump:/docker-entrypoint-initdb.d/
+#    command: mysqld --init-file=/data/application/init.sql
+#      db-data:/var/lib/mysql
+  employee-service:
+    restart: always
+    build: ./
+    networks:
+      - spring-boot-mysql-network
+    expose:
+      - "8081"
+    ports:
+      - "8081:8081"
+    environment:
+      WAIT_HOSTS: mysql:3306
+    depends_on:
+      - my-mysql-compose
+volumes:
+  db-data:
+
+networks:
+    spring-boot-mysql-network:
+      driver: bridge
+
+

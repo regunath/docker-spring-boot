@@ -24,6 +24,3 @@ INSERT INTO employee (first_name, last_name, department) VALUES
 ('Maria', 'Martinez', 'MCH'),
 ('James', 'Johnson', 'MCH'),
 ('James', 'BOND', 'CDS');
-
-INSERT INTO employee (first_name, last_name, department) VALUES
-('Ragu', 'samy', 'IT');
