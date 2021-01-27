@@ -14,10 +14,7 @@ services:
     ports:
       - "3306:3306"
     volumes:
-#      - ./src/main/resources:/data/application/
       - ./db-dump:/docker-entrypoint-initdb.d/
-#    command: mysqld --init-file=/data/application/init.sql
-#      db-data:/var/lib/mysql
   employee-service:
     restart: always
     build: ./

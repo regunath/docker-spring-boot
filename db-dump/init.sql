@@ -1,4 +1,10 @@
---Below SQL script will be executed automatically for the H2 Database. In case of Mysql, this needs to be executed manually
+
+DROP DATABASE IF EXISTS test;
+
+CREATE DATABASE test;
+
+use test;
+
 
 DROP TABLE IF EXISTS employee;
 
@@ -10,7 +16,7 @@ CREATE TABLE employee (
 );
 
 INSERT INTO employee (first_name, last_name, department) VALUES
-('Aliko', 'Dangote', 'EEE'),
+('Aliko', 'Dangote', 'CSE'),
 ('Bill', 'Gates', 'MCE'),
 ('Folrunsho', 'Alakija', 'CSE'),
 ('James', 'Smith', 'MCH'),
@@ -23,5 +29,10 @@ INSERT INTO employee (first_name, last_name, department) VALUES
 ('Maria', 'Hernandez', 'MCH'),
 ('Maria', 'Martinez', 'MCH'),
 ('James', 'Johnson', 'MCH'),
-('James', 'BOND', 'CDS'),
-('Ragu', 'BOND', 'CDS');
+('James', 'BOND', 'CDS');
+
+INSERT INTO employee (first_name, last_name, department) VALUES
+('Ragu', 'samy', 'IT');
+
+INSERT INTO employee (first_name, last_name, department) VALUES
+('Sindhu', 'RAGU', 'PHY');

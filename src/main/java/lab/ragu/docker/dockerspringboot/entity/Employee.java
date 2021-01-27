@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Employee Entity / Modal
+ * Employee Entity /  Model
  */
 @Entity
 public class Employee {
